@@ -1,0 +1,48 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<div class="wall">
+  <div class="menu">
+    <app-lateral-menu
+      [id]="User._id"
+      [name]="User.fullName"
+      [age]="User.age"
+      [email]="User.email"
+    ></app-lateral-menu>
+  </div>
+
+  <div class="post-news">
+    <app-new-posts
+      [_id]="_id"
+      [title]="title"
+      [content]="content"
+      (cleanFields)="blankFields()"
+    >
+    </app-new-posts>
+  </div>
+  <div>
+    <div
+      class="info search-results"
+      infiniteScroll
+      [infiniteScrollDistance]="0.4"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()"
+      [scrollWindow]="false"
+    >
+      <span *ngFor="let post of listPosts">
+        <span class="id" (click)="loadPosts(post._id)">
+          <label for="title">
+            {{ post.title }}
+          </label>
+          <label for="content">
+            {{ post.content }}
+          </label>
+          <div class="actions">
+            <button (click)="dislike(post._id)">Dislike</button>
+            <span>{{ likeCount }}</span>
+            <button (click)="like(post._id)">Like</button>
+          </div>
+        </span>
+      </span>
+    </div>
+  </div>
+</div>

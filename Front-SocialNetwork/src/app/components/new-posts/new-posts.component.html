@@ -1,0 +1,23 @@
+<div class="newPosts">
+  <label for="title">Título:</label>
+  <input type="text" id="title" [(ngModel)]="title" />
+
+  <label for="content">Contenido:</label>
+  <textarea id="content" [(ngModel)]="content"></textarea>
+
+  <div class="buttons">
+    <button type="button" class="" title="Delete" (click)="clearPosts()">
+      Clear
+    </button>
+    <button type="button" class="" title="Delete" (click)="deletePosts()">
+      Delete
+    </button>
+    <div *ngIf="_id !== ''" class="row btn-ud">
+      <button type="button" class="" title="Update" (click)="updatePosts()">
+        Update
+      </button>
+    </div>
+
+    <button *ngIf="_id === ''" (click)="createPosts()">Save</button>
+  </div>
+</div>

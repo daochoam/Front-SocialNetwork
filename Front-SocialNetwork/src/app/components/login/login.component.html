@@ -1,0 +1,55 @@
+<!-- auth.component.html -->
+<div class="auth-container">
+  <form *ngIf="isLoginMode; else registerForm" (ngSubmit)="onLogin()">
+    <h2>Login</h2>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" [(ngModel)]="loginEmail" name="email" required />
+      <div class="Warm">
+        <pre>{{ messageEmail }}</pre>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        [(ngModel)]="loginPassword"
+        name="password"
+        required
+      />
+      <div class="Warm">
+        <pre>{{ messagePassword }}</pre>
+      </div>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+  <ng-template #registerForm>
+    <form (ngSubmit)="onRegister()">
+      <h2>Register</h2>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" [(ngModel)]="registerEmail" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          [(ngModel)]="registerPassword"
+          name="password"
+          required
+        />
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </ng-template>
+
+  <div class="auth-toggle">
+    <p *ngIf="isLoginMode">
+      ¿No tienes cuenta? <a (click)="toggleMode()">Regístrate</a>
+    </p>
+    <p *ngIf="!isLoginMode">
+      ¿Ya tienes cuenta? <a (click)="toggleMode()">Iniciar Sesión</a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+// src/app/sidebar/sidebar.component.scss
+.wall {
+  position: absolute;
+    top: 0;
+  left: 0;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 1fr 4fr;
+  /* Dos columnas de igual ancho */
+  grid-template-rows: auto;
+  /* Altura automática */
+  flex-direction: column;
+  color: #fff;
+
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  .menu{
+    width: 100%;
+  }
+  .post-news{
+    position: relative;
+    left: 250px;
+    width: 100%;
+  }
+
+  /* post-cards.component.scss */
+.post-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+
+  &.selected {
+    background-color: #e0e0e0;
+  }
+
+  .actions {
+    margin-top: 10px;
+
+    button {
+      margin-right: 10px;
+    }
+  }}
+
+}

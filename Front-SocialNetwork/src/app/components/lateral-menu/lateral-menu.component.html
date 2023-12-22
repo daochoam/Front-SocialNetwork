@@ -1,0 +1,14 @@
+<div id="lateralMenu">
+  <div id="profile">
+    <img src="assets/avatar.jpg" alt="User Avatar" />
+    <p>{{ name }}</p>
+  </div>
+  <div id="user-info">
+    <p>Edad: {{ age }}</p>
+    <p>Email: {{ email }}</p>
+  </div>
+  <div id="actions">
+    <button>Edit Profile</button>
+    <button (click)="onLogout()">Logout</button>
+  </div>
+</div>

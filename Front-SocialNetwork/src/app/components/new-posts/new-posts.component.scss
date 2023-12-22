@@ -1,0 +1,23 @@
+.newPosts {
+    position: fixed;
+    margin-right: 20%;
+    width: 80%;
+    left: 270px;
+    display: flex;
+    flex-direction: column;
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input,
+  textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+
+}
